@@ -9,8 +9,33 @@
 html {
 	// 10/16 = 0.625 * 100 = 62.5% { default = 16px }
 	font-size: 62.5%;
+
+	@include respond(tab-land) {
+		// <= 1200px
+		font-size: 56.25%; // 1rem = 9px; 9 / 16 = 56.25%
+	}
+
+	@include respond(tab-port) {
+		// <= 900px
+		font-size: 50%; // 1rem = 8px; 8 / 16 = 50%
+	}
+
+	// @include respond(phone) {
+	// 	// <= 600px
+	// 	font-size: 38%;
+	// }
+
+	@include respond(big-desk) {
+		// >= 1800px
+		font-size: 75%; // 1rem = 12px; 12 / 16 = 75%
+	}
 }
 
 body {
 	box-sizing: border-box;
+	padding: 3rem;
+
+	@include respond(tab-port) {
+		padding: 0;
+	}
 }
